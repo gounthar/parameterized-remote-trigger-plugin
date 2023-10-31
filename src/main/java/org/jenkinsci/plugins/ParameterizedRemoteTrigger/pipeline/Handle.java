@@ -14,7 +14,6 @@ import java.util.Optional;
 
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.Nullable;
-import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 
 import org.apache.commons.lang.StringUtils;
 import org.jenkinsci.plugins.ParameterizedRemoteTrigger.BuildContext;
@@ -34,7 +33,6 @@ import net.sf.json.JSONObject;
  * environment variables (like in a Job). This prevents issues e.g. when triggering
  * remote jobs in a parallel pipeline step.
  */
-@ParametersAreNullableByDefault
 public class Handle implements Serializable {
 
     private static final long serialVersionUID = 4418782245518194292L;

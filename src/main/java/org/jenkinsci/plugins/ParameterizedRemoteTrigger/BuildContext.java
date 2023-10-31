@@ -7,7 +7,6 @@ import java.io.PrintStream;
 import edu.umd.cs.findbugs.annotations.NonNull;
 
 import edu.umd.cs.findbugs.annotations.Nullable;
-import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 
 import org.jenkinsci.plugins.ParameterizedRemoteTrigger.pipeline.Handle;
 
@@ -24,7 +23,6 @@ import hudson.model.TaskListener;
  * want to provide a {@link PrintStream} for logging. Therefore the first three objects can be null, the {@link PrintStream}
  * must not be null.
  */
-@ParametersAreNullableByDefault
 public class BuildContext extends BasicBuildContext
 {
     @NonNull

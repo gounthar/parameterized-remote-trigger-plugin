@@ -2,7 +2,6 @@ package org.jenkinsci.plugins.ParameterizedRemoteTrigger;
 
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.Nullable;
-import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 
 import hudson.FilePath;
 import hudson.model.Run;
@@ -14,7 +13,6 @@ import hudson.model.TaskListener;
  * <br>
  * The reason for wrapping is simplicity.
  */
-@ParametersAreNullableByDefault
 public class BasicBuildContext
 {
     @Nullable @CheckForNull
