@@ -12,7 +12,6 @@ import net.sf.json.JSONObject;
 
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.Nullable;
-import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Serializable;
@@ -79,7 +78,6 @@ import jenkins.tasks.SimpleBuildStep;
 /**
  * @author Maurice W.
  */
-@ParametersAreNullableByDefault
 public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep, Serializable {
 
 	private static final long serialVersionUID = -4059001060991775146L;
