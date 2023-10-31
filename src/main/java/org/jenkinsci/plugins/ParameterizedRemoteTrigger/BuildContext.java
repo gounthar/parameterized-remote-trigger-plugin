@@ -4,9 +4,10 @@ import static org.apache.commons.lang.StringUtils.trimToNull;
 
 import java.io.PrintStream;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNullableByDefault;
+import edu.umd.cs.findbugs.annotations.NonNull;
+
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 
 import org.jenkinsci.plugins.ParameterizedRemoteTrigger.pipeline.Handle;
 
@@ -26,36 +27,36 @@ import hudson.model.TaskListener;
 @ParametersAreNullableByDefault
 public class BuildContext extends BasicBuildContext
 {
-    @Nonnull
+    @NonNull
     public final PrintStream logger;
 
-    @Nonnull
+    @NonNull
     public RemoteJenkinsServer effectiveRemoteServer;
 
     /**
      * The current Item (job, pipeline,...) where the plugin is used from.
      */
-    @Nonnull
+    @NonNull
     public final String currentItem;
 
 
-    public BuildContext(@Nullable Run<?, ?> run, @Nullable FilePath workspace, @Nullable TaskListener listener, @Nonnull PrintStream logger, @Nonnull RemoteJenkinsServer effectiveRemoteServer, @Nullable String currentItem) {
+    public BuildContext(@Nullable Run<?, ?> run, @Nullable FilePath workspace, @Nullable TaskListener listener, @NonNull PrintStream logger, @NonNull RemoteJenkinsServer effectiveRemoteServer, @Nullable String currentItem) {
         super(run, workspace, listener);
         this.logger = logger;
         this.effectiveRemoteServer = effectiveRemoteServer;
         this.currentItem = getCurrentItem(run, currentItem);
     }
 
-    public BuildContext(@Nullable Run<?, ?> run, @Nullable FilePath workspace, @Nullable TaskListener listener, @Nonnull PrintStream logger, @Nonnull RemoteJenkinsServer effectiveRemoteServer) {
+    public BuildContext(@Nullable Run<?, ?> run, @Nullable FilePath workspace, @Nullable TaskListener listener, @NonNull PrintStream logger, @NonNull RemoteJenkinsServer effectiveRemoteServer) {
         this(run, workspace, listener, logger, effectiveRemoteServer, null);
     }
 
-    public BuildContext(@Nonnull PrintStream logger, @Nonnull RemoteJenkinsServer effectiveRemoteServer, @Nullable String currentItem)
+    public BuildContext(@NonNull PrintStream logger, @NonNull RemoteJenkinsServer effectiveRemoteServer, @Nullable String currentItem)
     {
         this(null, null, null, logger, effectiveRemoteServer, currentItem);
     }
 
-    @Nonnull
+    @NonNull
     private String getCurrentItem(Run<?, ?> run, String currentItem)
     {
         String runItem = null;

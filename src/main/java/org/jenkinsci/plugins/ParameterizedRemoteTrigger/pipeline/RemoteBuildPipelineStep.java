@@ -25,14 +25,14 @@ package org.jenkinsci.plugins.ParameterizedRemoteTrigger.pipeline;
 import static java.util.stream.Collectors.toMap;
 
 import java.util.ArrayList;
+
+import edu.umd.cs.findbugs.annotations.NonNull;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
-import javax.annotation.Nonnull;
 
 import org.jenkinsci.plugins.ParameterizedRemoteTrigger.BasicBuildContext;
 import org.jenkinsci.plugins.ParameterizedRemoteTrigger.BuildContext;
@@ -299,7 +299,7 @@ public class RemoteBuildPipelineStep extends Step {
 		}
 
 		@Restricted(NoExternalUse.class)
-		@Nonnull
+		@NonNull
 		public ListBoxModel doFillRemoteJenkinsNameItems() {
 			RemoteBuildConfiguration.DescriptorImpl descriptor = Descriptor.findByDescribableClassName(
 					ExtensionList.lookup(RemoteBuildConfiguration.DescriptorImpl.class),

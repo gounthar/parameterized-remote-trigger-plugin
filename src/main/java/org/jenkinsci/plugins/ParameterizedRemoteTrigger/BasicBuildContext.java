@@ -1,8 +1,8 @@
 package org.jenkinsci.plugins.ParameterizedRemoteTrigger;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNullableByDefault;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 
 import hudson.FilePath;
 import hudson.model.Run;

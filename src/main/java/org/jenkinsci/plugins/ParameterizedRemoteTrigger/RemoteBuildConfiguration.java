@@ -10,10 +10,9 @@ import static org.jenkinsci.plugins.ParameterizedRemoteTrigger.utils.StringTools
 import edu.umd.cs.findbugs.annotations.NonNull;
 import net.sf.json.JSONObject;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNullableByDefault;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.ParametersAreNullableByDefault;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Serializable;
@@ -335,7 +334,7 @@ public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep
 	 * @throws MalformedURLException if <code>remoteJenkinsName</code> no valid URL
 	 *                               or <code>job</code> an URL but nor valid.
 	 */
-	@Nonnull
+	@NonNull
 	public RemoteJenkinsServer evaluateEffectiveRemoteHost(BasicBuildContext context) throws IOException {
 		RemoteJenkinsServer globallyConfiguredServer = findRemoteHost(this.remoteJenkinsName);
 		RemoteJenkinsServer server = globallyConfiguredServer;
@@ -752,8 +751,8 @@ public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep
 	 * @throws InterruptedException if any thread has interrupted the current
 	 *                              thread.
 	 */
-	@Nonnull
-	private QueueItemData getQueueItemData(@Nonnull String queueId, @Nonnull BuildContext context)
+	@NonNull
+	private QueueItemData getQueueItemData(@NonNull String queueId, @NonNull BuildContext context)
 			throws IOException, InterruptedException {
 
 		if (context.effectiveRemoteServer.getAddress() == null) {
@@ -788,8 +787,8 @@ public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep
 		return queueItem;
 	}
 
-	@Nonnull
-	public RemoteBuildInfo updateBuildInfo(@Nonnull RemoteBuildInfo buildInfo, @Nonnull BuildContext context)
+	@NonNull
+	public RemoteBuildInfo updateBuildInfo(@NonNull RemoteBuildInfo buildInfo, @NonNull BuildContext context)
 			throws IOException, InterruptedException {
 
 		if (buildInfo.isNotTriggered())
@@ -905,7 +904,7 @@ public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep
 		}
 	}
 
-	private void logConfiguration(@Nonnull BuildContext context, Map<String, String> effectiveParams) throws IOException {
+	private void logConfiguration(@NonNull BuildContext context, Map<String, String> effectiveParams) throws IOException {
 		String _job = getJob();
 		String _jobExpanded = getJobExpanded(context);
 		String _jobExpandedLogEntry = (_job.equals(_jobExpanded)) ? "" : "(" + _jobExpanded + ")";
@@ -1048,7 +1047,7 @@ public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep
 		return disabled;
 	}
 
-	private @Nonnull JSONObject getRemoteJobMetadata(String jobNameOrUrl, @NonNull BuildContext context)
+	private @NonNull JSONObject getRemoteJobMetadata(String jobNameOrUrl, @NonNull BuildContext context)
 			throws IOException, InterruptedException {
 
 		String remoteJobUrl = generateJobUrl(context.effectiveRemoteServer, jobNameOrUrl);
@@ -1271,7 +1270,7 @@ public class RemoteBuildConfiguration extends Builder implements SimpleBuildStep
 		}
 
 		@Restricted(NoExternalUse.class)
-		@Nonnull
+		@NonNull
 		public ListBoxModel doFillRemoteJenkinsNameItems() {
 			ListBoxModel model = new ListBoxModel();
 
